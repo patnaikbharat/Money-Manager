@@ -1,0 +1,23 @@
+.list-item {
+  display: flex;
+  flex-direction: row;
+  border: solid 1px #334155;
+  list-style: none;
+}
+
+.text {
+  color: #1e293b;
+  font-size: 15px;
+  font-weight: 500;
+  font-family: 'Roboto';
+}
+
+.delete-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.icon {
+  width: 20px;
+}

@@ -1,0 +1,40 @@
+.list-item {
+  display: flex;
+  flex-direction: row;
+  border-radius: 15px;
+  padding: 15px;
+  list-style: none;
+}
+
+.balance {
+  background-color: #ecfccb;
+  border: solid 1px #84cc16;
+}
+
+.income {
+  background-color: #cffafe;
+  border: solid 1px #06b6d4;
+}
+
+.expenses {
+  background-color: #ede9fe;
+  border: solid 1px #7c3aed;
+}
+
+.logo {
+  width: 50px;
+}
+
+.text {
+  color: #334155;
+  font-size: 12px;
+  font-weight: 500;
+  font-family: 'Roboto';
+}
+
+.rupees {
+  color: #334155;
+  font-size: 18px;
+  font-weight: 500;
+  font-family: 'Roboto';
+}
