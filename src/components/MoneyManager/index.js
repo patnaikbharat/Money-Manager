@@ -38,22 +38,24 @@ class MoneyManager extends Component {
   onAddTransaction = event => {
     event.preventDefault()
     const {titleInput, amountInput, optionId} = this.state
-    const typeOption = transactionTypeOptions.find(
-      eachOption => eachOption.optionId === optionId,
-    )
-    const {displayText} = typeOption
-    const newTransaction = {
-      id: uuidv4(),
-      title: titleInput,
-      amount: parseInt(amountInput),
-      type: displayText,
+    if (titleInput !== '' && amountInput !== '') {
+      const typeOption = transactionTypeOptions.find(
+        eachOption => eachOption.optionId === optionId,
+      )
+      const {displayText} = typeOption
+      const newTransaction = {
+        id: uuidv4(),
+        title: titleInput,
+        amount: parseInt(amountInput),
+        type: displayText,
+      }
+      this.setState(prevState => ({
+        transactionList: [...prevState.transactionList, newTransaction],
+        titleInput: '',
+        amountInput: '',
+        optionId: transactionTypeOptions[0].optionId,
+      }))
     }
-    this.setState(prevState => ({
-      transactionList: [...prevState.transactionList, newTransaction],
-      titleInput: '',
-      amountInput: '',
-      optionId: transactionTypeOptions[0].optionId,
-    }))
   }
 
   getExpenses = () => {
@@ -71,7 +73,7 @@ class MoneyManager extends Component {
     const {transactionList} = this.state
     let incomeAmount = 0
 
-    transactionList.foreach(eachTransaction => {
+    transactionList.forEach(eachTransaction => {
       if (eachTransaction.type === transactionTypeOptions[0].displayText) {
         incomeAmount += eachTransaction.amount
       }
