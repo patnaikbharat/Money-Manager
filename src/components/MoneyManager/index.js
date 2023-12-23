@@ -121,13 +121,11 @@ class MoneyManager extends Component {
             <span className="add-color">Money Manager</span>
           </p>
         </div>
-        <ul className="details-container">
-          <MoneyDetails
-            balanceAmount={balanceAmount}
-            incomeAmount={incomeAmount}
-            expensesAmount={expensesAmount}
-          />
-        </ul>
+        <MoneyDetails
+          balanceAmount={balanceAmount}
+          incomeAmount={incomeAmount}
+          expensesAmount={expensesAmount}
+        />
         <div className="input-container">
           <form className="form-container" onSubmit={this.onAddTransaction}>
             <h1 className="heading-text">Add Transaction</h1>

@@ -1,3 +1,12 @@
+.details-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 .details-list-item {
   display: flex;
   flex-direction: row;
